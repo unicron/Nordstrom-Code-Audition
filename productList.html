@@ -2,15 +2,17 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div ng-repeat="product in products" class="inline">
-            <a href="#/products/{{product.style_id}}">
-                <img ng-src="http://g.nordstromimage.com/imagegallery/store/product/medium/{{product.image_url}}.jpg" alt="image of {{product.name}}" class="img-rounded">
-            </a>
-            <p>
-                {{product.formatted_regular_price}}<br>
-                <strong>{{product.name}}</strong><br>
-                <span class="text-success">{{product.brand}}</span>
-            </p>
+        <div class="col-sm-12">
+            <div ng-repeat="product in products" class="inline">
+                <a href="#/products/{{product.style_id}}">
+                    <img ng-src="http://g.nordstromimage.com/imagegallery/store/product/medium/{{product.image_url}}.jpg" alt="image of {{product.name}}" class="img-rounded">
+                </a>
+                <p>
+                    {{product.formatted_regular_price}}<br>
+                    <strong>{{product.name}}</strong><br>
+                    <em>{{product.brand}}</em>
+                </p>
+            </div>
         </div>
     </div>
 </div>
