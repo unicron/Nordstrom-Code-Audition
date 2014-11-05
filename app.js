@@ -19,12 +19,17 @@ nordstromApp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 
-nordstromApp.controller('ProductListController', ['$rootScope', '$http', function ($rootScope, $http) {
+nordstromApp.run(['$rootScope', '$http', function($rootScope, $http) {
     if (!$rootScope.products) {
         $http.get('Database.json').success(function(data) {
             $rootScope.products = data;
         });
     }
+}]);
+
+
+nordstromApp.controller('ProductListController', ['$rootScope', '$http', function($rootScope, $http) {
+    //data should already be loaded at this point
 }]);
 
 
@@ -36,6 +41,8 @@ nordstromApp.controller('ProductDetailController', ['$rootScope', '$scope', '$ro
             if (product.style_id == $routeParams.styleId)
                 $scope.product = product;
         });
+        
+        //for larger datasets maybe create a map of keys?
     }
     
     

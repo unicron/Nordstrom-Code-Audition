@@ -16,3 +16,7 @@ div.inline {
     margin: 1em;
     vertical-align: top;
 }
+
+button.btn-color-peach {
+    background-color: #c95b33;
+}

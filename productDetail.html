@@ -6,12 +6,17 @@
             <img ng-src="http://g.nordstromimage.com/imagegallery/store/product/large/{{product.image_url}}.jpg" alt="image of {{product.name}}">
         </div>
         <div class="col-sm-6">
+            <div class="row">
             <p>
                 {{productId}}<br>
                 {{product.formatted_regular_price}}<br>
                 {{product.name}}<br>
                 <span class="text-success">{{product.brand}}</span>
             </p>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-danger btn-block btn-color-peach">Add to Cart</button>
+            </div>
         </div>
     </div>
 </div>
