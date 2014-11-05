@@ -1,0 +1,16 @@
+<!-- productList.html -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-repeat="product in products" class="inline">
+            <a href="#/products/{{product.style_id}}">
+                <img ng-src="http://g.nordstromimage.com/imagegallery/store/product/medium/{{product.image_url}}.jpg" alt="image of {{product.name}}" class="img-rounded">
+            </a>
+            <p>
+                {{product.formatted_regular_price}}<br>
+                {{product.name}}<br>
+                <span class="text-success">{{product.brand}}</span>
+            </p>
+        </div>
+    </div>
+</div>

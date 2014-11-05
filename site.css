@@ -1,0 +1,18 @@
+/* site.css */
+
+hr {
+    background-color: black;
+    height: 2px;
+    border: 0px;
+}
+
+hr.thick {
+    height: 6px;
+}
+
+div.inline {
+    display: inline-block;
+    width: 165px;
+    margin: 1em;
+    vertical-align: top;
+}

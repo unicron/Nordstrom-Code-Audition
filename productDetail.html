@@ -1,0 +1,17 @@
+<!-- productList.html -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <img ng-src="http://g.nordstromimage.com/imagegallery/store/product/large/{{product.image_url}}.jpg" alt="image of {{product.name}}">
+        </div>
+        <div class="col-sm-6">
+            <p>
+                {{productId}}<br>
+                {{product.formatted_regular_price}}<br>
+                {{product.name}}<br>
+                <span class="text-success">{{product.brand}}</span>
+            </p>
+        </div>
+    </div>
+</div>
