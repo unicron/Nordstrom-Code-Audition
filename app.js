@@ -28,7 +28,7 @@ nordstromApp.run(['$rootScope', '$http', function($rootScope, $http) {
 }]);
 
 
-nordstromApp.controller('ProductListController', ['$rootScope', '$http', function($rootScope, $http) {
+nordstromApp.controller('ProductListController', [function() {
     //data should already be loaded at this point
 }]);
 
@@ -37,6 +37,7 @@ nordstromApp.controller('ProductDetailController', ['$rootScope', '$scope', '$ro
     if ($rootScope.products) {
         
         angular.forEach($rootScope.products, function(product) {
+            //for debugging
             //console.log(product);
             if (product.style_id == $routeParams.styleId)
                 $scope.product = product;
@@ -44,6 +45,5 @@ nordstromApp.controller('ProductDetailController', ['$rootScope', '$scope', '$ro
         
         //for larger datasets maybe create a map of keys?
     }
-    
     
 }]);
