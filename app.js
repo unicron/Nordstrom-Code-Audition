@@ -3,6 +3,7 @@
 var nordstromApp = angular.module('nordstromApp', ['ngRoute']);
 
 
+//set up routing
 nordstromApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
         when('/products', {
@@ -19,6 +20,7 @@ nordstromApp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 
+//initial function that runs once for setup/init
 nordstromApp.run(['$rootScope', '$http', function($rootScope, $http) {
     if (!$rootScope.products) {
         $http.get('Database.json').success(function(data) {
@@ -45,5 +47,4 @@ nordstromApp.controller('ProductDetailController', ['$rootScope', '$scope', '$ro
         
         //for larger datasets maybe create a map of keys?
     }
-    
 }]);
