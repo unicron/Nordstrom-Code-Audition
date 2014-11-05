@@ -9,7 +9,7 @@ nordstromApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'productList.html',
             controller: 'ProductListController'
         }).
-        when('/products/:productId', {
+        when('/products/:styleId', {
             templateUrl: 'productDetail.html',
             controller: 'ProductDetailController'
         }).
@@ -17,19 +17,26 @@ nordstromApp.config(['$routeProvider', function($routeProvider) {
             redirectTo: '/products'
         });
 }]);
-                 
 
 
-nordstromApp.controller('ProductListController', ['$scope', '$http', function ($scope, $http) {
-    $http.get('Database.json').success(function(data) {
-        $scope.products = data;
-    });
-
-    //$scope.orderProp = 'age';
+nordstromApp.controller('ProductListController', ['$rootScope', '$http', function ($rootScope, $http) {
+    if (!$rootScope.products) {
+        $http.get('Database.json').success(function(data) {
+            $rootScope.products = data;
+        });
+    }
 }]);
 
 
-nordstromApp.controller('ProductDetailController', ['$scope', '$routeParams', function($scope, $routeParams) {
-    $scope.productId = $routeParams.productId;
-    //$scope.
+nordstromApp.controller('ProductDetailController', ['$rootScope', '$scope', '$routeParams', function($rootScope, $scope, $routeParams) {
+    if ($rootScope.products) {
+        
+        angular.forEach($rootScope.products, function(product) {
+            //console.log(product);
+            if (product.style_id == $routeParams.styleId)
+                $scope.product = product;
+        });
+    }
+    
+    
 }]);
